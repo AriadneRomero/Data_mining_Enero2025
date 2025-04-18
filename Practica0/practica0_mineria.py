@@ -1,4 +1,4 @@
-# Ariadne Selena Romero Rivero #1957540 Practica#1 Mineria de datos
+# Ariadne Selena Romero Rivero #1957540 Practica#0 Mineria de datos
 # Libreria
 # !pip install opendatasets
 import opendatasets as od

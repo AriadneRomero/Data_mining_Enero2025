@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 # Lectura de datos
-data = pd.read_csv("videogamesales/videogamesales_clean.csv")
+data = pd.read_csv('videogamesales/videogamesales_clean.csv')
 
 
 def graficar_conteo_por_categoria(data: pd.DataFrame) -> None: 

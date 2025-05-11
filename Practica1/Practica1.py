@@ -8,7 +8,7 @@
 # os.listdir()
 
 import pandas as pd
-data = pd.read_csv("videogamesales/vgsales.csv")
+data = pd.read_csv("Practica1/videogamesales/vgsales.csv")
 
 # Change Nan for Not specified in Publisher
 data['Publisher'] = data['Publisher'].fillna('Not specified')

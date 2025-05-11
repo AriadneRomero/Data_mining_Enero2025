@@ -12,12 +12,12 @@ def codificar_categorias(data: pd.DataFrame) -> pd.DataFrame:
     data['Publisher'] = le.fit_transform(data['Publisher'])
     return data
 
-def crear_variable_objetivo(data):
+def crear_variable_objetivo(data: pd.DataFrame) -> pd.DataFrame: 
     median_sales = data['Global_Sales'].median()
     data['Sales_Class'] = data['Global_Sales'].apply(lambda x: 1 if x > median_sales else 0)
     return data
 
-def preparar_datos(data):
+def preparar_datos(data: pd.DataFrame) -> pd.DataFrame: 
     features = ['Platform', 'Year', 'Genre', 'NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']
     X = data[features]
     y = data['Sales_Class']
@@ -29,8 +29,8 @@ def escalar_datos(X_train, X_test):
     X_test_scaled = scaler.transform(X_test)
     return X_train_scaled, X_test_scaled
 
-def entrenar_y_evaluar_knn(X_train, X_test, y_train, y_test, n_neighbors=3):
-    knn = KNeighborsClassifier(n_neighbors=n_neighbors)
+def entrenar_y_evaluar_knn(X_train, X_test, y_train, y_test):
+    knn = KNeighborsClassifier(n_neighbors=3)
     knn.fit(X_train, y_train)
     y_pred = knn.predict(X_test)
     
